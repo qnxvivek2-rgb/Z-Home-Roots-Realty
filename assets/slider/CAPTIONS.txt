@@ -1,0 +1,1 @@
+All 10 uploaded photos are included. To permanently change captions, edit the matching slide h1 and p elements in index.html. Text is also contenteditable for quick preview edits.
