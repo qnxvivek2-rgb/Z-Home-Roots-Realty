@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Z Home Roots Realty – Homes & Properties, Tailored For You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7fd;--surf:#fff;--ink:#0a1f4d;--mut:#4a5d86;--navy:#0b3a8f;--blue:#1e5fd0;--gold:#e8912d;--line:#d3dcef;--hero:#eaf1ff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07122b;--surf:#0e2049;--ink:#eaf1ff;--mut:#9db1db;--navy:#7aa5ff;--blue:#5b8cff;--line:#223a73;--hero:#0a1a3d}}
+:root[data-theme="dark"]{--bg:#07122b;--surf:#0e2049;--ink:#eaf1ff;--mut:#9db1db;--navy:#7aa5ff;--blue:#5b8cff;--line:#223a73;--hero:#0a1a3d}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{font:800 20px Fraunces,serif;text-decoration:none;color:var(--navy);display:flex;gap:12px;align-items:center;min-width:0}.brand img{width:66px;height:66px;object-fit:contain;flex-shrink:0}.brand span{line-height:1.15}
+nav div a{margin-left:22px;text-decoration:none;font-weight:600;font-size:15px;color:var(--mut)}
+nav div a:hover{color:var(--blue)}
+.btn{display:inline-block;padding:14px 26px;border-radius:12px;background:var(--navy);color:#fff;font-weight:700;text-decoration:none;border:0;cursor:pointer;font:700 16px Manrope,sans-serif;transition:transform .2s}
+:root[data-theme="dark"] .btn,:root:not([data-theme="light"]) .btn{color:#07122b}
+.btn:hover{transform:translateY(-3px)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--navy)}
+ .hero{position:relative;height:min(760px,calc(100svh - 92px));min-height:540px;overflow:hidden;background:#071a33;color:#fff;padding:0;isolation:isolate}
+.hero-slides,.hero-slide{position:absolute;inset:0}.hero-slide{opacity:0;visibility:hidden;transition:opacity .65s ease;pointer-events:none}.hero-slide.active{opacity:1;visibility:visible;pointer-events:auto}
+.hero-slide img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.slide-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,17,39,.86),rgba(3,17,39,.58) 45%,rgba(3,17,39,.10)),linear-gradient(0deg,rgba(3,17,39,.48),transparent 45%)}
+.slide-caption{position:absolute;left:max(5vw,calc((100vw - 1150px)/2));bottom:clamp(82px,12vh,130px);width:min(620px,85%);color:#fff}
+.slide-caption .eyebrow{display:inline-block;font-size:12px;letter-spacing:.18em;font-weight:800;color:#d9eaff;margin-bottom:15px}
+.slide-caption h1{font-size:clamp(34px,5.3vw,66px);font-weight:800;color:#fff;text-shadow:0 2px 18px #0004;margin:0}
+.slide-caption p{font-size:clamp(15px,1.7vw,19px);line-height:1.6;color:#f1f5ff;margin:16px 0 24px;max-width:560px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero .btn{background:#0b3a8f;color:#fff}.hero .btn.alt{background:#08162d66;border:1px solid #ffffffd9;color:#fff}
+.slider-arrow{position:absolute;z-index:3;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid #ffffffa6;background:#04122773;color:white;font-size:23px;cursor:pointer;display:grid;place-items:center}
+.slider-arrow:hover{background:#0b3a8f}.slider-arrow.prev{left:18px}.slider-arrow.next{right:18px}
+.slider-controls{position:absolute;z-index:3;bottom:27px;left:5vw;display:flex;gap:8px;max-width:75%;flex-wrap:wrap}
+.slider-dot{width:10px;height:10px;border-radius:99px;padding:0;border:1px solid white;background:#ffffff59;cursor:pointer}.slider-dot.active{width:28px;background:white}
+.slide-count{position:absolute;z-index:3;right:5vw;bottom:22px;color:white;font-size:13px;font-weight:700;letter-spacing:.08em}
+section{padding:90px 5vw}
+.wrap{max-width:1150px;margin:auto}
+h2{font-size:clamp(30px,4.5vw,48px);color:var(--navy);margin-bottom:12px}
+.lead{color:var(--mut);max-width:560px;margin:0 0 44px}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));perspective:1000px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:28px;transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .2s;will-change:transform}
+.card:hover{box-shadow:0 24px 40px -18px rgba(11,58,143,.45)}
+.card b{display:block;font:800 22px Fraunces,serif;margin:14px 0 6px;transform:translateZ(30px)}
+.card span{color:var(--mut);font-size:15px}
+.ic{font-size:34px;display:block;transform:translateZ(50px)}
+.deal{background:var(--navy);color:#fff}
+:root[data-theme="dark"] .deal,:root:not([data-theme="light"]) .deal{}
+.deal h2{color:#fff}.deal .lead{color:#c8d8ff}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.chips div{padding:20px;border:1px solid rgba(255,255,255,.28);border-radius:14px;font-weight:700;display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.06)}
+.chips em{font-style:normal;font-size:26px}
+.why{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));text-align:center}
+.why div{padding:10px}.why em{font-style:normal;font-size:40px;display:block}
+.why b{display:block;font-family:Fraunces,serif;font-size:19px;margin-top:6px}
+.contact{display:grid;gap:36px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.info p{margin:0 0 16px}.info a{color:var(--blue);font-weight:700}
+form{display:grid;gap:12px;background:var(--surf);padding:26px;border-radius:18px;border:1px solid var(--line)}
+input,select,textarea{font:inherit;padding:13px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:11;background:#1fa855;color:#fff;border-radius:50px;padding:13px 20px;font-weight:700;text-decoration:none;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+@media(max-width:700px){nav{padding:8px 4vw;gap:8px}.brand{font-size:16px;gap:8px}.brand img{width:48px;height:48px}nav div a:not(.cta){display:none}.hero{height:76svh;min-height:570px;max-height:760px}.slide-caption{left:6vw;bottom:92px;width:88%}.slide-caption h1{font-size:clamp(30px,8vw,46px)}.slide-caption p{font-size:15px;margin:12px 0 18px}.hero-actions{gap:8px}.hero-actions .btn{padding:12px 15px;font-size:14px;margin-left:0!important}.slider-arrow{width:36px;height:36px;font-size:18px}.slider-arrow.prev{left:9px}.slider-arrow.next{right:9px}.slider-controls{left:6vw;bottom:25px;gap:6px;max-width:75%}.slider-dot{width:8px;height:8px}.slider-dot.active{width:22px}.slide-count{right:5vw;bottom:20px;font-size:11px}}@media(max-width:390px){.brand{font-size:14px}.brand img{width:42px;height:42px}.hero-actions .btn{padding:10px 12px}.slide-caption{bottom:100px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="#top" aria-label="Z Home Roots Realty home"><img src="assets/z-home-roots-logo.png" alt="Z Home Roots Realty logo"><span>Z Home Roots Realty</span></a>
+  <div><a href="#services">Services</a><a href="#deal">We deal in</a><a href="#why">Why us</a><a class="cta" href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero" id="top" aria-label="Featured properties and projects"><div class="hero-slides"><article class="hero-slide active" aria-hidden="false">
+<img src="assets/slider/slide-01.jpeg" alt="Business networking and property connections" loading="eager">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Meet our real estate network</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
+<img src="assets/slider/slide-02.jpeg" alt="Retail shops and commercial investment opportunities" loading="lazy">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Commercial spaces for growing businesses</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
+<img src="assets/slider/slide-03.jpeg" alt="Property presentation and customer event" loading="lazy">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Property events and customer engagement</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
+<img src="assets/slider/slide-04.jpeg" alt="Meetings with real estate professionals" loading="lazy">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Building trusted property relationships</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
+<img src="assets/slider/slide-05.jpeg" alt="Three-storey residential house available in Chanpora" loading="lazy">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Residential property in Chanpora</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
+<img src="assets/slider/slide-06.jpeg" alt="Independent house with landscaped frontage" loading="lazy">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Explore independent homes</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
+<img src="assets/slider/slide-07.jpeg" alt="Commercial property event and signing" loading="lazy">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Commercial property opportunities</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
+<img src="assets/slider/slide-08.jpeg" alt="Grandthum commercial development brochure" loading="lazy">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Commercial developments and investments</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
+<img src="assets/slider/slide-09.jpeg" alt="Real estate consultation and customer discussion" loading="lazy">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Personal guidance for your property search</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
+<img src="assets/slider/slide-10.jpeg" alt="Real estate presentation and networking" loading="lazy">
+<div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
+<h1 contenteditable="true" aria-label="Edit slide caption">Local expertise. Personal service</h1>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals — matched to your needs in Srinagar.</p>
+<div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article></div>
+<button class="slider-arrow prev" type="button" aria-label="Previous slide">&#10094;</button><button class="slider-arrow next" type="button" aria-label="Next slide">&#10095;</button>
+<div class="slider-controls" aria-label="Choose slide"><button type="button" class="slider-dot active" aria-label="Show slide 1" aria-current="true"></button><button type="button" class="slider-dot" aria-label="Show slide 2" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 3" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 4" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 5" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 6" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 7" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 8" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 9" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 10" aria-current="false"></button></div>
+<div class="slide-count"><span id="slide-current">01</span> / 10</div></header>
+
+<section id="services"><div class="wrap">
+  <h2>What we do for you</h2>
+  <p class="lead">Buying, selling or renting, one team handles it from first visit to final paperwork.</p>
+  <div class="grid">
+    <div class="card"><span class="ic">🏠</span><b>Residential properties</b><span>Find your perfect home for a better living.</span></div>
+    <div class="card"><span class="ic">🏢</span><b>Commercial properties</b><span>Premium spaces for your business growth.</span></div>
+    <div class="card"><span class="ic">🤝</span><b>Rental & leasing</b><span>Flexible options for every requirement.</span></div>
+    <div class="card"><span class="ic">🔑</span><b>Property consultancy</b><span>Expert advice for smart investments.</span></div>
+  </div>
+</div></section>
+
+<section class="deal" id="deal"><div class="wrap">
+  <h2>We deal in</h2>
+  <p class="lead">Every kind of property, under one roof.</p>
+  <div class="chips">
+    <div><em>🏙️</em>Residential apartments</div><div><em>🏡</em>Villas & independent houses</div>
+    <div><em>🏬</em>Commercial spaces</div><div><em>🛍️</em>Shops & showrooms</div>
+    <div><em>📍</em>Plots & land</div><div><em>🏭</em>Industrial properties</div>
+    <div><em>🗝️</em>Rental properties</div><div><em>📋</em>Property management</div>
+  </div>
+</div></section>
+
+<section id="why"><div class="wrap">
+  <h2>Why choose us</h2>
+  <p class="lead">Straight answers, honest pricing, and someone to call at every step.</p>
+  <div class="why">
+    <div><em>🛡️</em><b>Trust & transparency</b></div><div><em>👥</em><b>Experienced team</b></div>
+    <div><em>🎯</em><b>Customer focused</b></div><div><em>🏅</em><b>Quality service</b></div>
+    <div><em>🤲</em><b>End to end support</b></div>
+  </div>
+</div></section>
+
+<section id="contact" style="background:var(--hero)"><div class="wrap contact">
+  <div class="info">
+    <h2>Let's find your dream property together</h2>
+    <p class="lead" style="margin-bottom:24px">Tell us what you're looking for and we'll reply on WhatsApp.</p>
+    <p><b>Phone / WhatsApp</b><br><a href="tel:+919211599507">+91 9211599507</a></p>
+    <p><b>Office</b><br>1st Floor, Main Road, Badu Bagh, Khanyar, Srinagar, J&K – 190003, India.</p>
+    <a class="btn alt" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Badu+Bagh+Khanyar+Srinagar+190003">Open in Maps</a>
+  </div>
+  <form id="f">
+    <input id="n" placeholder="Your name" required aria-label="Your name">
+    <select id="t" aria-label="Property type"><option>Residential property</option><option>Commercial property</option><option>Shop / showroom</option><option>Plot / land</option><option>Industrial property</option><option>Rental / lease</option></select>
+    <textarea id="m" rows="4" placeholder="Budget, location, size…" aria-label="Requirement"></textarea>
+    <button class="btn" type="submit">Send on WhatsApp</button>
+  </form>
+</div></section>
+
+<footer>© 2026 Z Home Roots Realty · Homes & Properties, Tailored For You</footer>
+<a class="wa" target="_blank" rel="noopener" href="https://wa.me/919211599507">WhatsApp us</a>
+
+
+<script>
+// WhatsApp form
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+ var t='Hi Z Home Roots Realty, I am '+n.value+'. Looking for: '+document.getElementById('t').value+'. '+m.value;
+ window.open('https://wa.me/919211599507?text='+encodeURIComponent(t),'_blank');});
+
+// Card tilt (CSS 3D)
+document.querySelectorAll('.card').forEach(function(c){
+ c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  c.style.transform='rotateY('+x*16+'deg) rotateX('+-y*16+'deg)';});
+ c.addEventListener('pointerleave',function(){c.style.transform='';});});
+
+</script>
+<script>(function(){const slides=[...document.querySelectorAll('.hero-slide')],dots=[...document.querySelectorAll('.slider-dot')],current=document.getElementById('slide-current'),hero=document.querySelector('.hero');let index=0,timer;function show(n){index=(n+slides.length)%slides.length;slides.forEach((s,i)=>{s.classList.toggle('active',i===index);s.setAttribute('aria-hidden',i===index?'false':'true')});dots.forEach((d,i)=>{d.classList.toggle('active',i===index);d.setAttribute('aria-current',i===index?'true':'false')});if(current)current.textContent=String(index+1).padStart(2,'0')}function restart(){clearInterval(timer);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>show(index+1),6000)}document.querySelector('.slider-arrow.prev').addEventListener('click',()=>{show(index-1);restart()});document.querySelector('.slider-arrow.next').addEventListener('click',()=>{show(index+1);restart()});dots.forEach((d,i)=>d.addEventListener('click',()=>{show(i);restart()}));let x=0;hero.addEventListener('touchstart',e=>x=e.changedTouches[0].screenX,{passive:true});hero.addEventListener('touchend',e=>{let dx=e.changedTouches[0].screenX-x;if(Math.abs(dx)>45){show(index+(dx<0?1:-1));restart()}},{passive:true});hero.addEventListener('mouseenter',()=>clearInterval(timer));hero.addEventListener('mouseleave',restart);show(0);restart()})();</script></body>
+</html>

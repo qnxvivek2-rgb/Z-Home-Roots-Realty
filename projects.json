@@ -1,0 +1,113 @@
+[
+    {
+        "slug":  "srinagar-properties",
+        "title":  "Properties for Sale in Srinagar",
+        "loc":  "Srinagar, J\u0026K, India",
+        "type":  "Residential \u0026 Commercial",
+        "blurb":  "Handpicked homes, shops and plots available across Srinagar.",
+        "images":  [
+                       "assets/projects/srinagar-properties/photo-01.jpeg",
+                       "assets/projects/srinagar-properties/photo-02.jpeg",
+                       "assets/projects/srinagar-properties/photo-03.jpeg",
+                       "assets/projects/srinagar-properties/photo-04.jpeg",
+                       "assets/projects/srinagar-properties/photo-05.png"
+                   ],
+        "cover":  "assets/projects/srinagar-properties/photo-01.jpeg",
+        "count":  5
+    },
+    {
+        "slug":  "bhutani-grandthum-greater-noida",
+        "title":  "Bhutani Grandthum",
+        "loc":  "Greater Noida West, India",
+        "type":  "Commercial",
+        "blurb":  "Landmark commercial and retail development in Greater Noida West.",
+        "images":  [
+                       "assets/projects/bhutani-grandthum-greater-noida/photo-01.jpeg",
+                       "assets/projects/bhutani-grandthum-greater-noida/photo-02.jpeg",
+                       "assets/projects/bhutani-grandthum-greater-noida/photo-03.jpeg",
+                       "assets/projects/bhutani-grandthum-greater-noida/photo-04.jpeg"
+                   ],
+        "cover":  "assets/projects/bhutani-grandthum-greater-noida/photo-01.jpeg",
+        "count":  4
+    },
+    {
+        "slug":  "rak-oasis-uae",
+        "title":  "RAK Oasis",
+        "loc":  "Ras Al Khaimah, UAE",
+        "type":  "Residential",
+        "blurb":  "Modern waterfront-inspired living in Ras Al Khaimah.",
+        "images":  [
+                       "assets/projects/rak-oasis-uae/photo-01.jpeg",
+                       "assets/projects/rak-oasis-uae/photo-02.jpeg",
+                       "assets/projects/rak-oasis-uae/photo-03.jpeg"
+                   ],
+        "cover":  "assets/projects/rak-oasis-uae/photo-01.jpeg",
+        "count":  3
+    },
+    {
+        "slug":  "dugast-uae",
+        "title":  "Dugast",
+        "loc":  "UAE",
+        "type":  "Luxury Residential",
+        "blurb":  "Premium branded residences with resort-style amenities.",
+        "images":  [
+                       "assets/projects/dugast-uae/photo-01.jpeg",
+                       "assets/projects/dugast-uae/photo-02.jpeg",
+                       "assets/projects/dugast-uae/photo-03.jpeg",
+                       "assets/projects/dugast-uae/photo-04.jpeg",
+                       "assets/projects/dugast-uae/photo-05.jpeg"
+                   ],
+        "cover":  "assets/projects/dugast-uae/photo-01.jpeg",
+        "count":  5
+    },
+    {
+        "slug":  "fablux-by-forbes",
+        "title":  "Fablux by Forbes",
+        "loc":  "UAE",
+        "type":  "Luxury Residential",
+        "blurb":  "Forbes-branded luxury apartments designed for refined living.",
+        "images":  [
+                       "assets/projects/fablux-by-forbes/photo-01.jpeg",
+                       "assets/projects/fablux-by-forbes/photo-02.jpeg",
+                       "assets/projects/fablux-by-forbes/photo-03.jpeg",
+                       "assets/projects/fablux-by-forbes/photo-04.jpeg",
+                       "assets/projects/fablux-by-forbes/photo-05.jpeg"
+                   ],
+        "cover":  "assets/projects/fablux-by-forbes/photo-01.jpeg",
+        "count":  5
+    },
+    {
+        "slug":  "the-monarque-by-greenbay",
+        "title":  "The Monarque by Greenbay",
+        "loc":  "Greater Noida, India",
+        "type":  "Luxury Residential",
+        "blurb":  "Ultra-luxury high-rise residences by Greenbay.",
+        "images":  [
+                       "assets/projects/the-monarque-by-greenbay/photo-01.jpeg",
+                       "assets/projects/the-monarque-by-greenbay/photo-02.jpeg",
+                       "assets/projects/the-monarque-by-greenbay/photo-03.jpeg",
+                       "assets/projects/the-monarque-by-greenbay/photo-04.jpeg",
+                       "assets/projects/the-monarque-by-greenbay/photo-05.jpeg",
+                       "assets/projects/the-monarque-by-greenbay/photo-06.jpeg",
+                       "assets/projects/the-monarque-by-greenbay/photo-07.jpeg"
+                   ],
+        "cover":  "assets/projects/the-monarque-by-greenbay/photo-01.jpeg",
+        "count":  7
+    },
+    {
+        "slug":  "one-fng-by-group108",
+        "title":  "One FNG by Group 108",
+        "loc":  "Noida, India",
+        "type":  "Commercial",
+        "blurb":  "Grade-A commercial workspaces and retail by Group 108.",
+        "images":  [
+                       "assets/projects/one-fng-by-group108/photo-01.jpeg",
+                       "assets/projects/one-fng-by-group108/photo-02.jpeg",
+                       "assets/projects/one-fng-by-group108/photo-03.jpeg",
+                       "assets/projects/one-fng-by-group108/photo-04.jpeg",
+                       "assets/projects/one-fng-by-group108/photo-05.jpeg"
+                   ],
+        "cover":  "assets/projects/one-fng-by-group108/photo-01.jpeg",
+        "count":  5
+    }
+]
