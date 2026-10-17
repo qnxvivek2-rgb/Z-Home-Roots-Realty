@@ -460,10 +460,16 @@ footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border
     <a class="btn alt" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Badu+Bagh+Khanyar+Srinagar+190003">Open in Maps</a>
   </div>
   <form id="f">
-    <input id="n" placeholder="Your name" required aria-label="Your name">
-    <select id="t" aria-label="Property type"><option>Residential property</option><option>Commercial property</option><option>Shop / showroom</option><option>Plot / land</option><option>Industrial property</option><option>Rental / lease</option></select>
-    <textarea id="m" rows="4" placeholder="Budget, location, size&hellip;" aria-label="Requirement"></textarea>
-    <button class="btn" type="submit">Send on WhatsApp</button>
+    <input type="hidden" name="access_key" value="5502ebbc-a7a1-4314-8331-3ebb7c88d5f8">
+    <input type="hidden" name="subject" value="New enquiry from Z Home Roots Realty website">
+    <input type="hidden" name="from_name" value="Z Home Roots Realty Website">
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
+    <input id="n" name="name" placeholder="Your name" required aria-label="Your name">
+    <input id="p" name="phone" type="tel" placeholder="Your phone or WhatsApp" aria-label="Your phone">
+    <select id="t" name="property_type" aria-label="Property type"><option>Residential property</option><option>Commercial property</option><option>Shop / showroom</option><option>Plot / land</option><option>Industrial property</option><option>Rental / lease</option></select>
+    <textarea id="m" name="message" rows="4" placeholder="Budget, location, size&hellip;" aria-label="Requirement"></textarea>
+    <button class="btn" type="submit">Send enquiry</button>
+    <p id="fmsg" role="status" style="margin:4px 2px 0;font-size:14px;min-height:18px"></p>
   </form>
 </div></section>
 
@@ -479,9 +485,29 @@ footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border
 
 <script>
 // WhatsApp form
-document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
- var t='Hi Z Home Roots Realty, I am '+n.value+'. Looking for: '+document.getElementById('t').value+'. '+m.value;
- window.open('https://wa.me/919211599507?text='+encodeURIComponent(t),'_blank');});
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var form=e.target, btn=form.querySelector('button[type=submit]'), msg=document.getElementById('fmsg');
+  var name=document.getElementById('n').value.trim();
+  var ptype=document.getElementById('t').value;
+  var req=document.getElementById('m').value.trim();
+  var phone=document.getElementById('p').value.trim();
+  var waText='Hi Z Home Roots Realty, I am '+name+(phone?(' ('+phone+')'):'')+'. Looking for: '+ptype+'. '+req;
+  btn.disabled=true; msg.style.color='var(--mut)'; msg.textContent='Sending your enquiry\u2026';
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(Object.fromEntries(new FormData(form)))
+  }).then(function(r){return r.json();}).then(function(data){
+    if(data.success){ msg.style.color='#1fa855'; msg.textContent='Thank you! We have received your enquiry and will reply shortly. Opening WhatsApp\u2026'; form.reset(); }
+    else { msg.style.color='#d0362b'; msg.textContent='Could not send email, opening WhatsApp instead\u2026'; }
+  }).catch(function(){
+    msg.style.color='#d0362b'; msg.textContent='Network issue, opening WhatsApp instead\u2026';
+  }).finally(function(){
+    btn.disabled=false;
+    window.open('https://wa.me/919211599507?text='+encodeURIComponent(waText),'_blank');
+  });
+});
 
 // Card tilt (CSS 3D)
 document.querySelectorAll('.card').forEach(function(c){
