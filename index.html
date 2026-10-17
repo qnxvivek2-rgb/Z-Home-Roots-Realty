@@ -191,6 +191,14 @@ footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border
   .slide-shade{z-index:2}
   .slide-caption{z-index:3}
   </style>
+  <style>
+  /* Fix: solid primary buttons always have white text (background is dark navy in all themes) */
+  .btn{color:#fff !important}
+  :root[data-theme="dark"] .btn,:root:not([data-theme="light"]) .btn{color:#fff !important}
+  /* Outline/ghost buttons keep readable text against transparent background */
+  .btn.alt{color:var(--ink) !important;background:transparent !important}
+  .hero .btn.alt{color:#fff !important}
+  </style>
 </head>
 <body>
 <nav>
@@ -203,52 +211,52 @@ footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border
 <img class="hero-fg" src="assets/slider/slide-01.jpeg" alt="Business networking and property connections" loading="eager">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Meet our real estate network</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
 <img class="hero-fg" src="assets/slider/slide-02.jpeg" alt="Retail shops and commercial investment opportunities" loading="lazy">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Commercial spaces for growing businesses</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
 <img class="hero-fg" src="assets/slider/slide-03.jpeg" alt="Property presentation and customer event" loading="lazy">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Property events and customer engagement</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
 <img class="hero-fg" src="assets/slider/slide-04.jpeg" alt="Meetings with real estate professionals" loading="lazy">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Building trusted property relationships</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
 <img class="hero-fg" src="assets/slider/slide-05.jpeg" alt="Three-storey residential house available in Chanpora" loading="lazy">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Residential property in Chanpora</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
 <img class="hero-fg" src="assets/slider/slide-06.jpeg" alt="Independent house with landscaped frontage" loading="lazy">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Explore independent homes</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
 <img class="hero-fg" src="assets/slider/slide-07.jpeg" alt="Commercial property event and signing" loading="lazy">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Commercial property opportunities</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
 <img class="hero-fg" src="assets/slider/slide-08.jpeg" alt="Grandthum commercial development brochure" loading="lazy">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Commercial developments and investments</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
 <img class="hero-fg" src="assets/slider/slide-09.jpeg" alt="Real estate consultation and customer discussion" loading="lazy">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Personal guidance for your property search</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article><article class="hero-slide" aria-hidden="true">
 <img class="hero-fg" src="assets/slider/slide-10.jpeg" alt="Real estate presentation and networking" loading="lazy">
 <div class="slide-shade"></div><div class="slide-caption"><span class="eyebrow">Z HOME ROOTS REALTY</span>
 <h1 contenteditable="true" aria-label="Edit slide caption">Local expertise. Personal service</h1>
-<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Srinagar.</p>
+<p contenteditable="true" aria-label="Edit slide description">Homes, shops, plots and rentals &mdash; matched to your needs in Jammu &amp; Kashmir, Delhi NCR and UAE.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Find your property</a><a class="btn alt" href="tel:+919211599507">Call +91 9211599507</a></div></div></article></div>
 <button class="slider-arrow prev" type="button" aria-label="Previous slide">&#10094;</button><button class="slider-arrow next" type="button" aria-label="Next slide">&#10095;</button>
 <div class="slider-controls" aria-label="Choose slide"><button type="button" class="slider-dot active" aria-label="Show slide 1" aria-current="true"></button><button type="button" class="slider-dot" aria-label="Show slide 2" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 3" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 4" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 5" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 6" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 7" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 8" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 9" aria-current="false"></button><button type="button" class="slider-dot" aria-label="Show slide 10" aria-current="false"></button></div>
