@@ -1,4 +1,4 @@
-[
+﻿[
     {
         "slug":  "srinagar-properties",
         "title":  "Properties for Sale in Srinagar",
@@ -63,7 +63,7 @@
     {
         "slug":  "fablux-by-forbes",
         "title":  "FabLuxe by Forbes",
-        "loc":  "UAE",
+        "loc":  "Greater Noida",
         "type":  "Luxury Residential",
         "blurb":  "Forbes-branded luxury apartments designed for refined living.",
         "images":  [
@@ -109,5 +109,22 @@
                    ],
         "cover":  "assets/projects/one-fng-by-group108/photo-01.jpeg",
         "count":  5
+    },
+    {
+        "slug":  "grandthum-by-group108",
+        "title":  "Grandthum by Group 108",
+        "loc":  "Greater Noida West, India",
+        "type":  "Commercial",
+        "blurb":  "Iconic high-street commercial and retail destination by Group 108.",
+        "images":  [
+                       "assets/projects/grandthum-by-group108/photo-01.jpeg",
+                       "assets/projects/grandthum-by-group108/photo-02.jpeg",
+                       "assets/projects/grandthum-by-group108/photo-03.jpeg",
+                       "assets/projects/grandthum-by-group108/photo-04.jpeg",
+                       "assets/projects/grandthum-by-group108/photo-05.jpeg"
+                   ],
+        "cover":  "assets/projects/grandthum-by-group108/photo-01.jpeg",
+        "count":  5
     }
 ]
+
