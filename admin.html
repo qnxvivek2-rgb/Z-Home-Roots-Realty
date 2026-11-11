@@ -154,11 +154,12 @@ git push origin main</pre>
   }
   function pad2(n){return (n<10?'0':'')+n;}
   function extOf(name){var m=/\.([a-z0-9]+)$/i.exec(name||'');return m?m[1].toLowerCase():'jpeg';}
-  // location label from a filename like "Location Habak Crossing.jpeg"
+  // Caption only when the filename explicitly starts with "Location ..."
+  // (your convention). Other names, e.g. WhatsApp downloads, get no caption.
   function captionFromName(name){
     var base=String(name||'').replace(/\.[^.]+$/,'');
-    base=base.replace(/^location[\s_-]*/i,'').trim();
-    return base;
+    var m=/^location[\s_-]+(.+)$/i.exec(base.trim());
+    return m?m[1].trim():'';
   }
 
   function refreshOutput(){
