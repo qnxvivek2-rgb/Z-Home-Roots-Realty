@@ -10,10 +10,15 @@
                        "assets/projects/srinagar-properties/photo-02.jpeg",
                        "assets/projects/srinagar-properties/photo-03.jpeg",
                        "assets/projects/srinagar-properties/photo-04.jpeg",
-                       "assets/projects/srinagar-properties/photo-05.png"
+                       "assets/projects/srinagar-properties/photo-05.png",
+                       "assets/projects/srinagar-properties/photo-06.jpeg",
+                       "assets/projects/srinagar-properties/photo-07.jpeg",
+                       "assets/projects/srinagar-properties/photo-08.jpeg",
+                       "assets/projects/srinagar-properties/photo-09.jpeg",
+                       "assets/projects/srinagar-properties/photo-10.jpeg"
                    ],
         "cover":  "assets/projects/srinagar-properties/photo-01.jpeg",
-        "count":  5
+        "count":  10
     },
     {
         "slug":  "bhutani-grandthum-greater-noida",

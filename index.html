@@ -276,8 +276,8 @@ footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border
   <h2>Featured projects &amp; properties</h2>
   <p class="lead">A curated selection of residential and commercial opportunities we represent in Srinagar, across India and in the UAE.</p>
   <div class="pgrid">
-      <article class="pcard" data-images='["assets/projects/srinagar-properties/photo-01.jpeg","assets/projects/srinagar-properties/photo-02.jpeg","assets/projects/srinagar-properties/photo-03.jpeg","assets/projects/srinagar-properties/photo-04.jpeg","assets/projects/srinagar-properties/photo-05.png"]' data-title="Properties for Sale in Srinagar">
-        <div class="pcard-img"><img src="assets/projects/srinagar-properties/photo-01.jpeg" alt="Properties for Sale in Srinagar - Residential &amp; Commercial in Srinagar, J&amp;K, India" loading="lazy"><span class="pcount">5 photos</span></div>
+      <article class="pcard" data-images='["assets/projects/srinagar-properties/photo-01.jpeg","assets/projects/srinagar-properties/photo-02.jpeg","assets/projects/srinagar-properties/photo-03.jpeg","assets/projects/srinagar-properties/photo-04.jpeg","assets/projects/srinagar-properties/photo-05.png","assets/projects/srinagar-properties/photo-06.jpeg","assets/projects/srinagar-properties/photo-07.jpeg","assets/projects/srinagar-properties/photo-08.jpeg","assets/projects/srinagar-properties/photo-09.jpeg","assets/projects/srinagar-properties/photo-10.jpeg"]' data-captions='["","","","","","Brein, Nishat","Habak Crossing","Khanyar, Srinagar","Khawaja Bazar, Srinagar","Mehdi Colony, Foreshore Road"]' data-title="Properties for Sale in Srinagar">
+        <div class="pcard-img"><img src="assets/projects/srinagar-properties/photo-01.jpeg" alt="Properties for Sale in Srinagar - Residential &amp; Commercial in Srinagar, J&amp;K, India" loading="lazy"><span class="pcount">10 photos</span></div>
         <div class="pcard-body">
           <span class="ptype">Residential &amp; Commercial</span>
           <b>Properties for Sale in Srinagar</b>
@@ -545,15 +545,16 @@ document.querySelectorAll('.card').forEach(function(c){
 <script>
 (function(){
   var lb=document.getElementById('lightbox'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap');
-  var list=[],idx=0,title='';
-  function render(){img.src=list[idx];cap.textContent=title+' - '+(idx+1)+' / '+list.length;}
-  function open(l,t){list=l;title=t;idx=0;render();lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
+  var list=[],caps=[],idx=0,title='';
+  function render(){img.src=list[idx];var loc=caps[idx]?(' \u00b7 '+caps[idx]):'';cap.textContent=title+loc+' - '+(idx+1)+' / '+list.length;}
+  function open(l,t,c){list=l;title=t;caps=c||[];idx=0;render();lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
   function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');img.src='';}
   function step(d){idx=(idx+d+list.length)%list.length;render();}
   document.querySelectorAll('.pcard').forEach(function(c){
     var imgs=JSON.parse(c.getAttribute('data-images')||'[]');
+    var caps=JSON.parse(c.getAttribute('data-captions')||'[]');
     var t=c.getAttribute('data-title')||'';
-    function go(){open(imgs,t);}
+    function go(){open(imgs,t,caps);}
     c.querySelector('.pview').addEventListener('click',go);
     c.querySelector('.pcard-img').addEventListener('click',go);
   });
