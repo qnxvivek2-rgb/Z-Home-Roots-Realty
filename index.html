@@ -97,6 +97,13 @@ footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border
   .ploc{color:var(--mut);font-size:14px}
   .pblurb{color:var(--mut);font-size:14px;flex:1;margin:4px 0 14px}
   .pview{align-self:flex-start;padding:10px 18px;font-size:14px}
+  .pcard-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+  .pwa{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;font-size:14px;font-weight:700;border-radius:12px;background:#1fa855;color:#fff;text-decoration:none;border:0;cursor:pointer}
+  .pwa:hover{background:#199549}
+  .pwa svg{width:17px;height:17px;fill:currentColor}
+  .lb-wa{position:absolute;bottom:58px;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;padding:11px 20px;font-size:15px;font-weight:700;border-radius:30px;background:#1fa855;color:#fff;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+  .lb-wa:hover{background:#199549}
+  .lb-wa svg{width:18px;height:18px;fill:currentColor}
   .lightbox{position:fixed;inset:0;z-index:50;background:rgba(3,10,25,.94);display:none;align-items:center;justify-content:center}
   .lightbox.open{display:flex}
   .lb-img{max-width:92vw;max-height:82vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
@@ -285,6 +292,13 @@ footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border
   var grid=document.getElementById('pgrid');
   if(!grid)return;
   function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+  // Shared WhatsApp phone + pre-filled message builder (Tier 1 click-to-chat).
+  var WA_PHONE='919211599507';
+  window.buildWaLink=function(title,loc){
+    var msg="Hi Z Home Roots Realty, I'm interested in "+(title||'this property')+(loc?(' ('+loc+')'):'')+'. Please share details.';
+    return 'https://wa.me/'+WA_PHONE+'?text='+encodeURIComponent(msg);
+  };
+  var WA_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>';
   function card(p){
     var imgs=p.images||[];
     var caps=p.captions||[];
@@ -295,6 +309,9 @@ footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border
     art.setAttribute('data-images',JSON.stringify(imgs));
     art.setAttribute('data-captions',JSON.stringify(caps));
     art.setAttribute('data-title',p.title||'');
+    art.setAttribute('data-loc',p.loc||'');
+    art.setAttribute('data-type',p.type||'');
+    art.setAttribute('data-wa',window.buildWaLink(p.title||'',p.loc||''));
     art.innerHTML=
       '<div class="pcard-img"><img src="'+esc(cover)+'" alt="'+esc((p.title||'')+' - '+(p.type||'')+' in '+(p.loc||''))+'" loading="lazy"><span class="pcount">'+n+' photo'+(n===1?'':'s')+'</span></div>'+
       '<div class="pcard-body">'+
@@ -302,7 +319,10 @@ footer{text-align:center;padding:28px 5vw;color:var(--mut);font-size:14px;border
         '<b>'+esc(p.title||'')+'</b>'+
         '<span class="ploc">&#128205; '+esc(p.loc||'')+'</span>'+
         '<span class="pblurb">'+esc(p.blurb||'')+'</span>'+
-        '<button class="btn pview" type="button">View gallery</button>'+
+        '<div class="pcard-actions">'+
+          '<button class="btn pview" type="button">View gallery</button>'+
+          '<a class="pwa" target="_blank" rel="noopener" href="'+esc(window.buildWaLink(p.title||'',p.loc||''))+'">'+WA_ICON+'Enquire on WhatsApp</a>'+
+        '</div>'+
       '</div>';
     return art;
   }
@@ -504,14 +524,15 @@ document.querySelectorAll('.card').forEach(function(c){
   <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">&#10094;</button>
   <img class="lb-img" id="lbImg" src="" alt="Project photo">
   <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">&#10095;</button>
+  <a class="lb-wa" id="lbWa" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Enquire about this property</a>
   <div class="lb-caption" id="lbCap"></div>
 </div>
 <script>
 (function(){
-  var lb=document.getElementById('lightbox'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap');
+  var lb=document.getElementById('lightbox'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap'),wa=document.getElementById('lbWa');
   var list=[],caps=[],idx=0,title='';
   function render(){img.src=list[idx];var loc=caps[idx]?(' \u00b7 '+caps[idx]):'';cap.textContent=title+loc+' - '+(idx+1)+' / '+list.length;}
-  function open(l,t,c){list=l;title=t;caps=c||[];idx=0;render();lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
+  function open(l,t,c,walink){list=l;title=t;caps=c||[];idx=0;render();if(wa&&walink)wa.setAttribute('href',walink);lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
   function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');img.src='';}
   function step(d){idx=(idx+d+list.length)%list.length;render();}
   function bind(c){
@@ -520,7 +541,8 @@ document.querySelectorAll('.card').forEach(function(c){
     var imgs=JSON.parse(c.getAttribute('data-images')||'[]');
     var caps=JSON.parse(c.getAttribute('data-captions')||'[]');
     var t=c.getAttribute('data-title')||'';
-    function go(){open(imgs,t,caps);}
+    var walink=c.getAttribute('data-wa')||'';
+    function go(){open(imgs,t,caps,walink);}
     var v=c.querySelector('.pview'); if(v)v.addEventListener('click',go);
     var pi=c.querySelector('.pcard-img'); if(pi)pi.addEventListener('click',go);
   }
